@@ -2,13 +2,8 @@ import { Inter } from 'next/font/google';
 import { UserContextProvider } from '@/context/user';
 
 import '@/globals.css';
-import '@/styles/layout/layout.scss';
-import '@/styles/demo/Demos.scss';
-import 'primeicons/primeicons.css';
-//theme
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-//core
-import 'primereact/resources/primereact.min.css';
+
+
 
 import PrimeProvider from '@/components/prime_react_provider';
 
@@ -29,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main
             className={`${inter.className} relative flex flex-row w-full h-full  text-gray-800 bg-gray-200`}
         >
-            <UserContextProvider><PrimeProvider>{children}</PrimeProvider></UserContextProvider>
+            <UserContextProvider>{children}</UserContextProvider>
         </main>
         </body>
         </html>
