@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import swalAlert from '@/components/common/alert';
 import { useRouter } from 'next/navigation';
-import { hideLoader, showLoader } from '@/components/common/preloader';
 import axios from 'axios';
+import swalAlert from '@/common-components/alert';
 
 type QueryParams = {
     [key: string]: any;
@@ -88,9 +87,7 @@ export const postData = async (
     alert = true,
     t?: (text: string) => string
 ) => {
-    showLoader();
     const { error, msg, data: d } = await func({ ...data });
-    hideLoader();
     if (!error) {
         if (reload) {
             reload(d);
@@ -124,7 +121,7 @@ export const useActionConfirm: ActionConfirmFunc = async (
 ) => {
     const { isConfirmed } = await swalAlert.confirm(message, confirmText);
     if (isConfirmed) {
-        await useAction(func, data, reload, alert);
+        await postData(func, data, reload, alert);
     }
 };
 

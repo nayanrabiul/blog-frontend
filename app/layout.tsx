@@ -4,10 +4,6 @@ import { UserContextProvider } from '@/context/user';
 import '@/globals.css';
 
 
-
-import PrimeProvider from '@/components/prime_react_provider';
-
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -22,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <body className={inter.className}>
         <main
-            className={`${inter.className} relative flex flex-row w-full h-full  text-gray-800 bg-gray-200`}
+            className={`${inter.className} relative `}
         >
             <UserContextProvider>{children}</UserContextProvider>
         </main>
