@@ -9,7 +9,6 @@ import SocialSignIn from '@/common_components/socialLogin';
 
 
 const Header = () => {
-    const [visible, setVisible] = useState(false);
     const [userSidebarVisible, setUserSidebarVisible] = useState(false);
     const { user, logOut } = useUserContext();
     let router = useRouter();
