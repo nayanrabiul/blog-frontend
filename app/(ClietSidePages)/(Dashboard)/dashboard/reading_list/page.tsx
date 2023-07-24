@@ -2,8 +2,8 @@
 import React from 'react';
 import { useFetch } from '@/helpers/hooks';
 import { fetchToReadingList } from '@/helpers/backend_helper';
-import ReadingListPost from '@/app/(Dashboard)/dashboard/reading_list/ReadingListPost';
 import { Skeleton } from 'primereact/skeleton';
+import ReadingListPost from '@/common_components/ArticleCard/client/ArticleCard';
 
 
 const MyComponent = () => {

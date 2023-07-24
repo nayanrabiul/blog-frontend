@@ -80,7 +80,7 @@ const SocialSignIn: React.FC = () => {
             {/*Sign in with Google with svg*/}
             <button
                 onClick={handleGoogleLogin}
-                className="px-4 py-2 border-2 border-green-900 shadow flex gap-2 rounded-lg text-slate-700 hover:border-green-500 hover:text-slate-900 hover:shadow-2xl transition duration-150">
+                className="px-4 py-2  border shadow  flex gap-2 rounded-lg text-slate-700 hover:-green-500 hover:text-slate-900 hover:-2xl transition duration-150">
                 <Image height={6} width={6} className="w-6 h-6" src="/google.svg"
                      alt="google logo"/>
                     <span>Login with Google</span>

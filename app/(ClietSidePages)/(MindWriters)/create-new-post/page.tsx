@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useFormik } from 'formik';
 import { postData } from '@/helpers/hooks';
 import { postArticle, postTopic } from '@/helpers/backend_helper';
-import Editor from '@/components/editor/editor';
+import Editor from '@/app/(ClietSidePages)/components/editor/editor';
 
 
 const Myapp = () => {
@@ -30,12 +30,12 @@ const Myapp = () => {
     const Html = markdownit(formik.values.content);
 
     return (
-        <div className={'grid grid-cols-2 gap-4  overflow-ellipsis m-3 b-3 border-green-900'}>
+        <div className={'grid grid-cols-2 gap-4  overflow-ellipsis m-3 b-3 '}>
             <div>
                 <Editor formik={formik} />
             </div>
             {/*scroll x */}
-            <div className={'h-[85vh] overflow-x-hidden border bg-white rounded'}>
+            <div className={'h-[85vh] overflow-x-hidden  bg-white rounded'}>
                 {formik.values.image.length > 0 && (
                     <Image
                         src={formik.values.image[0]}
@@ -46,7 +46,7 @@ const Myapp = () => {
                     />)
                 }
                 <article
-                    className='prose lg:prose-xl  h-[82vh] overflow-ellipsis m-3 p-6 border-green-900 rounded'>
+                    className='prose lg:prose-xl  h-[82vh] overflow-ellipsis m-3 p-6  rounded'>
                     <h1>{formik.values.title}</h1>
                     <div dangerouslySetInnerHTML={{ __html: Html }} />
                 </article>

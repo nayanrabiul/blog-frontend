@@ -1,6 +1,5 @@
 'use client';
 
-import '@/globals.css';
 import '@/styles/layout/layout.scss';
 import '@/styles/demo/Demos.scss';
 import 'primeicons/primeicons.css';
@@ -11,7 +10,7 @@ import { classNames } from 'primereact/utils';
 import React, { useContext, useEffect, useRef } from 'react';
 import { LayoutContext } from '@/app/(ClietSidePages)/(Dashboard)/context/layoutcontext';
 import AppMenu from '@/app/(ClietSidePages)/(Dashboard)/admin/🏗️🏗️🏗️ AppLayout/AppMenu';
-
+import AppTopbar from '@/app/(ClietSidePages)/(Dashboard)/components/AppTopBar';
 const Layout = ({ children }) => {
     const { layoutConfig, layoutState, setLayoutState } = useContext(LayoutContext);
     const topbarRef = useRef(null);

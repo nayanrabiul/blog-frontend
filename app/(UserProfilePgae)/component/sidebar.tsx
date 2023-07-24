@@ -2,12 +2,12 @@
 import React from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useFetch } from '@/helpers/hooks';
-import { fetchTopics } from '@/helpers/backend_helper';
+import { fetchTopics, fetchTopicsPerUser } from '@/helpers/backend_helper';
 
 
-export default function Sidebar({ children }) {
+export default function UserSidebar({ children }) {
     let router = useRouter();
-    let data = useFetch(fetchTopics);
+    let data = useFetch(fetchTopicsPerUser);
     let topics = data[0] || [];
 
     const searchParams = useSearchParams();
@@ -21,8 +21,8 @@ export default function Sidebar({ children }) {
 
     if (topics.isArray) return <div>Loading...</div>;
     return (
-        <div className={'w-full  h-full  py-6 '}>
-                <div className={'relative h-full container mx-auto flex flex-row   '}>
+        <div className={'w-full h-full py-6 shadow  '}>
+                <div className={'relative h-full container mx-auto flex flex-row'}>
                     <div className={'h-full flex flex-col justify-center items-center '}>
                         <div
                             className={'w-72 shadow border  mr-6 rounded h-[100%] hidden md:flex flex-col items-start justify-start'}>
@@ -37,7 +37,7 @@ export default function Sidebar({ children }) {
                                         className={'mr-6'}
                                         onClick={() => {
                                             router.push(`/?topic=${topic._id}`);
-                                        }}>{topic.name}</div>
+                                        }}>{topic.name} ({topic.count})</div>
 
                                     <div className={''}>
                                         {current_topic_id === topic._id ? (

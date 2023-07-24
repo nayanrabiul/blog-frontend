@@ -1,6 +1,5 @@
 'use client';
 
-import '@/globals.css';
 import '@/styles/layout/layout.scss';
 import '@/styles/demo/Demos.scss';
 import 'primeicons/primeicons.css';
@@ -9,11 +8,12 @@ import { useRouter } from 'next/navigation';
 import { useEventListener, useMountEffect, useUnmountEffect } from 'primereact/hooks';
 import { classNames } from 'primereact/utils';
 import React, { useContext, useEffect, useRef } from 'react';
-import AppTopbar from '@/app/(Dashboard)/dashboard/🏗️🏗️🏗️ AppLayout/AppNavBar';
-import AppMenu from '@/app/(Dashboard)/dashboard/🏗️🏗️🏗️ AppLayout/AppMenu';
-import { LayoutContext } from '@/app/(Dashboard)/context/layoutcontext';
+
 import { AppTopbarRef, LayoutState } from '@/✅✅✅ types/layout';
+import { LayoutContext } from '@/app/(ClietSidePages)/(Dashboard)/context/layoutcontext';
+import AppTopbar from '@/app/(ClietSidePages)/(Dashboard)/components/AppTopBar';
 import PrimeReact from 'primereact/api';
+import AppMenu from '@/app/(ClietSidePages)/(Dashboard)/dashboard/🏗️🏗️🏗️ AppLayout/AppMenu';
 
 const Layout = ({ children }) => {
     const { layoutConfig, layoutState, setLayoutState } = useContext(LayoutContext);

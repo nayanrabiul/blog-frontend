@@ -4,12 +4,12 @@ import { InputText } from 'primereact/inputtext';
 import { useRef, useState } from 'react';
 import { InputTextarea } from 'primereact/inputtextarea';
 import Image from 'next/image';
-import UploadFIle from '@/components/image_uploader';
 import { Button } from 'primereact/button';
 import { MultiSelect } from 'primereact/multiselect';
 import { useFetch } from '@/helpers/hooks';
 import { fetchTopics } from '@/helpers/backend_helper';
 import { Dropdown } from 'primereact/dropdown';
+import UploadFIle from '@/app/(ClietSidePages)/components/image_uploader';
 
 
 let api = `${process.env.NEXT_PUBLIC_API_URL}/api/uploadSingleFile`;

@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 
+/*primary: '#14532D',*/
+/*secondary: '#BEEAD0',*/
+/*background: '#E6F9EE',*/
+/*accent: '#DD6A1D',*/
+
+
 /* width */
 ::-webkit-scrollbar {
   width: 7px;

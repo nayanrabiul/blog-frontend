@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { classNames } from 'primereact/utils';
 import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
-import { LayoutContext } from '@/app/(Dashboard)/context/layoutcontext';
 import { AppTopbarRef } from '@/✅✅✅ types/layout';
+import { LayoutContext } from '@/app/(ClietSidePages)/(Dashboard)/context/layoutcontext';
 
-const AppNavBar = forwardRef<AppTopbarRef>((props, ref) => {
+const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
     const { layoutConfig, layoutState, onMenuToggle, showProfileSidebar } = useContext(LayoutContext);
     const menubuttonRef = useRef(null);
     const topbarmenuRef = useRef(null);
@@ -52,6 +52,6 @@ const AppNavBar = forwardRef<AppTopbarRef>((props, ref) => {
     );
 });
 
-AppNavBar.displayName = 'AppTopbar';
+AppTopbar.displayName = 'AppTopbar';
 
-export default AppNavBar;
+export default AppTopbar;

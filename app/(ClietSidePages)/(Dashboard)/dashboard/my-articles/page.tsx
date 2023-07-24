@@ -11,7 +11,7 @@ const MyComponent = () => {
     if (loading) return (<div>loading</div>);
     let data = articles.docs;
     const imageBodyTemplate = (data) => {
-        return <img src={data.image} alt={data.title} className='w-6rem shadow-2 border-round w-48 h-32' />;
+        return <img src={data.image} alt={data.title} className='w-6rem -2 -round w-48 h-32' />;
     };
     const topicTemplete = (data) => {
         console.log('fklasdkljfasjdf', data);

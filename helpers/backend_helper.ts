@@ -9,6 +9,7 @@ export const verifyGoogleUser = (data: any) => post('/user/verify-google-user', 
 export const fetchTopic = (data?: any) => get('/article/topic', data);
 export const fetchFeaturedArticle = (data?: any) => get('/article/featured', data);
 export const fetchTopics = (data?: any) => get('/article/topics', data);
+export const fetchTopicsPerUser = (data?: any) => get('/article/topics-per-user', data);
 export const postTopic = (data?: any) => post('/article/topic', data);
 
 //article

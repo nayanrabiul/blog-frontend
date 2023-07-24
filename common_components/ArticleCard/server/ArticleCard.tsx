@@ -1,14 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import ReadingList from '@/common-components/ReadingList';
+import { router } from 'next/client';
+import ReadingList from '@/common_components/ReadingList';
 
-export default async function HomePageRecentPost({ article }) {
+export default async function ArticleCard({ article }) {
 
     return (
         <>
-            <div
-                className='  w-full mb-6 border border-green-900 rounded-md shadow-md bg-gray-200 text-gray-800'>
+            <div className='relative shadow border-2 w-full mb-6   rounded-md -md  '>
+                <div className={'absolute right-6 top-3'}>
+                    <ReadingList post_id={article._id} />
+                </div>
                 {/*main image*/}
                 <Link
                     rel='noopener noreferrer'
@@ -26,10 +29,13 @@ export default async function HomePageRecentPost({ article }) {
                         <Image src={article.user.image} alt=''
                                height={32}
                                width={32}
-                               className='object-cover object-center w-12 h-12 rounded-full shadow-sm bg-gray-500 border-gray-300' />
+                               className='object-cover object-center w-12 h-12 rounded-full -sm bg-gray-500 -gray-300' />
                         <div className={'p-2 '}>
-                            <div className='text-sm font-semibold leadi'>{article.user.name}</div>
-                            <div className='inline-block text-xs leadi text-gray-600'>
+                            <Link href={`/user/${article.user.username}`}>
+                                <div
+                                    className='text-sm font-semibold leadi'>{article.user.name}</div>
+                            </Link>
+                            <div className='inline-block text-xs opacity-80 '>
                                 {`${
                                     new Date(article.updatedAt).toLocaleDateString('en-US', {
                                         year: 'numeric',
@@ -64,20 +70,16 @@ export default async function HomePageRecentPost({ article }) {
                         <h1 className={'px-2'}>{article.title}</h1>
                     </Link>
 
-                    <div className={'absolute right-6 top-3'}>
-                        <ReadingList post_id={article._id} />
-                    </div>
-
                 </div>
 
-                <div className='pl-2 mt-6 flex flex-col justify-start items-start '>
+                <div className='pl-2    mt-6 flex flex-col justify-start items-start '>
                     <div className='text-black font-extrabold text-xl'>{article.topic.name}</div>
                     <div className=' flex flex-wrap justify-start '>
-                        <div className='m-1 px-2 py-1 rounded border shadow'>#javascript</div>
-                        <div className='m-1 px-2 py-1 rounded border shadow'>#javascript</div>
-                        <div className='m-1 px-2 py-1 rounded border shadow'>#javascript</div>
-                        <div className='m-1 px-2 py-1 rounded border shadow'>#javascript</div>
-                        <div className='m-1 px-2 py-1 rounded border shadow'>#javascript</div>
+                        <div className='m-1 px-2 py-1 rounded  '>#javascript</div>
+                        <div className='m-1 px-2 py-1 rounded  '>#javascript</div>
+                        <div className='m-1 px-2 py-1 rounded  '>#javascript</div>
+                        <div className='m-1 px-2 py-1 rounded  '>#javascript</div>
+                        <div className='m-1 px-2 py-1 rounded  '>#javascript</div>
 
                     </div>
                 </div>
@@ -98,8 +100,6 @@ export default async function HomePageRecentPost({ article }) {
 
                     </div>
                 </div>
-
-
             </div>
 
         </>

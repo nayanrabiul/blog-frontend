@@ -1,7 +1,6 @@
 import React from 'react';
-import SearchSidebar from '@/app/(ClietSidePages)/(SearchPage)/sidebar';
+import UserSidebar from '@/app/(UserProfilePgae)/component/sidebar';
 import Header from '@/common_components/header/header';
-
 
 const MainSiteLayout = ({ children }) => {
     return (
@@ -10,9 +9,7 @@ const MainSiteLayout = ({ children }) => {
                 <Header />
             </div>
             <div className={'h-[89%]'}>
-                <SearchSidebar>
-                    {children}
-                </SearchSidebar>
+                <UserSidebar>{children}</UserSidebar>
             </div>
 
 

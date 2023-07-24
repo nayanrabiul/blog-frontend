@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: { key: string } }) {
                 <Image src={article.user.image} alt=''
                        height={32}
                        width={32}
-                       className='object-cover object-center w-12 h-12 rounded-full shadow-sm bg-gray-500 border-gray-300' />
+                       className='object-cover object-center w-12 h-12 rounded-full -sm bg-gray-500 -gray-300' />
                 <div className={'p-2 '}>
                     <div className='text-sm font-semibold leadi'>{article.user.name}</div>
                     <div className='inline-block text-xs leadi text-gray-600'>
@@ -59,7 +59,7 @@ export default async function Page({ params }: { params: { key: string } }) {
                     <div className='flex flex-row space-x-2 '>
 
                         {[12, 31, 23].map((tag) => (
-                            <div key={tag} className='bg-gray-200 rounded px-2'>
+                            <div key={tag} className=' rounded px-2'>
                                 {'#js'}
                             </div>
                         ))}

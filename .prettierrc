@@ -39,7 +39,8 @@
     },
     {
       "files": [
-        "app/**/*"
+        "app/**/*",
+        "common_components/**/*"
       ],
       "options": {
         "parser": "typescript"

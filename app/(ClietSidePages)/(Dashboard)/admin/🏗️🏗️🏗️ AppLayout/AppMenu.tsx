@@ -3,10 +3,9 @@
 
 import React, { useContext } from 'react';
 import AppMenu_item_creator from './AppMenu_item_creator';
-import { LayoutContext } from '@/app/(Dashboard)/context/layoutcontext';
-import { MenuProvider } from '@/app/(Dashboard)/context/menucontext';
-import menu_link from '@/app/(Dashboard)/admin/\uD83C\uDFD7\uFE0F\uD83C\uDFD7\uFE0F\uD83C\uDFD7\uFE0F AppLayout/sidebar_items_link';
-
+import { LayoutContext } from '@/app/(ClietSidePages)/(Dashboard)/context/layoutcontext';
+import { MenuProvider } from '@/app/(ClietSidePages)/(Dashboard)/context/menucontext';
+import menu_link from '@/app/(ClietSidePages)/(Dashboard)/admin/🏗️🏗️🏗️ AppLayout/sidebar_items_link';
 const AppMenu = () => {
     const { layoutConfig } = useContext(LayoutContext);
     return (

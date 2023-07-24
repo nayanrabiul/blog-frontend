@@ -29,9 +29,9 @@ const ReadingList = ({ post_id }) => {
 
     };
     return (
-        <div>
+        <div className={'text-center'}>
             <i onClick={handlePostReadingList}
-               className={`pi  ${isReadingList ? 'pi-bookmark-fill text-green-500 ' : 'pi-bookmark'} h-4 w-4 font-semibold p-1`} />
+               className={`text-center pi  ${isReadingList ? 'pi-bookmark-fill text-green-500 ' : 'pi-bookmark-fill text-white'} h-4 w-4 font-semibold`} />
         </div>
     );
 };

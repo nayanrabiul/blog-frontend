@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
 export interface UserType {
     _id?: string;
+    name: string;
+    username?: string;
     email: string;
     image: string;
     role?: string;

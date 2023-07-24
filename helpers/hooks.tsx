@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import swalAlert from '@/common-components/alert';
+import swalAlert from '@/common_components/alert';
 
 type QueryParams = {
     [key: string]: any;

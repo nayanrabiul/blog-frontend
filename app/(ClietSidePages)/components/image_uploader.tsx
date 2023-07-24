@@ -8,7 +8,7 @@ import { Tag } from 'primereact/tag';
 import { Button } from 'primereact/button';
 import axios from 'axios';
 
-export default function PTDemo({ api, value, onChange, multiple = false, maxFileSize = 1000000 }) {
+export default function UploadFIle({ api, value, onChange, multiple = false, maxFileSize = 1000000 }) {
 
     const toast = useRef(null);
     const [totalSize, setTotalSize] = useState(0);

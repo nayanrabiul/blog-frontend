@@ -9,6 +9,7 @@ import { FileUpload } from 'primereact/fileupload';
 import { Toast } from 'primereact/toast';
 
 const SignupForm = () => {
+    const uploadedFiles = [];
     const toast = useRef(null);
     // Pass the useFormik() hook initial form values and a submit function that will
     // be called when the form is submitted
