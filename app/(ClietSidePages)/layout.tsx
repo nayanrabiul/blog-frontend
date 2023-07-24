@@ -1,8 +1,4 @@
-import PrimeProvider from '@/context/prime_react_provider';
 
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-//core
-import "primereact/resources/primereact.min.css";
 
 
 
@@ -17,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div
             className={` flex flex-row w-full h-full   `}
         >
-            <PrimeProvider>{children}</PrimeProvider>
+            {children}
         </div>
 
     );

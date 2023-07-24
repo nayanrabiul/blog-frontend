@@ -1,7 +1,11 @@
 import { LayoutProvider } from '@/app/(ClietSidePages)/(Dashboard)/context/layoutcontext';
 
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css';
 import '@/styles/layout/layout.scss';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import '@/styles/demo/Demos.scss';
+
+
 const RootLayout = ({ children }) => {
     return <LayoutProvider>{children}</LayoutProvider>;
 };

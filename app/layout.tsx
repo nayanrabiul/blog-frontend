@@ -3,10 +3,12 @@ import { UserContextProvider } from '@/context/user';
 
 import '@/globals.css';
 import 'primeicons/primeicons.css';
-import 'primereact/resources/primereact.min.css';
-
 import '@/styles/prism.css';//for code blocks
 
+
+import PrimeProvider from '@/context/prime_react_provider';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -25,7 +27,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main
             className={`${inter.className} relative `}
         >
-            <UserContextProvider>{children}</UserContextProvider>
+            <UserContextProvider>
+                <PrimeProvider>
+                    {children}
+                </PrimeProvider>
+            </UserContextProvider>
         </main>
         </body>
         </html>

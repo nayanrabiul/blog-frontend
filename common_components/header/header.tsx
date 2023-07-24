@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { Links } from '@/common_components/header/link';
 import SocialSignIn from '@/common_components/socialLogin';
 
-
 const Header = () => {
     const [userSidebarVisible, setUserSidebarVisible] = useState(false);
     const { user, logOut } = useUserContext();
@@ -39,7 +38,8 @@ const Header = () => {
                                     //print the value of the input field
                                 {
                                     event.preventDefault();
-                                    let pushUrl = '/search?query=' + event.target[0].value;
+                                    let pushUrl = '/search?query=' + event.target['Search'].value;
+                                    console.log(event.target['Search'].value);
                                     if (filter) {
                                         pushUrl += '&filter=' + filter;
                                     }
