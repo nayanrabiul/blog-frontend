@@ -1,9 +1,5 @@
 'use client';
 
-import '@/styles/layout/layout.scss';
-import '@/styles/demo/Demos.scss';
-import 'primeicons/primeicons.css';
-
 import { useRouter } from 'next/navigation';
 import { useEventListener, useMountEffect, useUnmountEffect } from 'primereact/hooks';
 import { classNames } from 'primereact/utils';

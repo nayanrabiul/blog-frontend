@@ -6,11 +6,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Links } from '@/common_components/header/link';
 import SocialSignIn from '@/common_components/socialLogin';
+import { Avatar } from 'primereact/avatar';
+import { Button } from 'primereact/button';
+import { Sidebar } from 'primereact/sidebar';
 
 const Header = () => {
     const [userSidebarVisible, setUserSidebarVisible] = useState(false);
     const { user, logOut } = useUserContext();
     let router = useRouter();
+    const [visible, setVisible] = useState(false);
 
     let searchParams = useSearchParams();
     let filter = searchParams.get('filter') || 'Article';
@@ -69,75 +73,74 @@ const Header = () => {
                 <div className={'flex justify-end items-center gap-3 overflow-clip'}>
                     <div className={'flex justify-end items-center'}>
                         {user ? (
-                                <Image
-                                    src={user?.image}
-                                    height={50}
-                                    width={50}
-                                    alt={'user image'}
-                                    className={'rounded-full cursor-pointer h-full w-full'}
-                                    onClick={() => setUserSidebarVisible(!userSidebarVisible)}
-                                />)
-                            : null
+                            <Avatar
+                                image={user?.image}
+                                size='large'
+                                shape='circle'
+                                className={'hover:cursor-pointer'}
+                                onClick={() => setUserSidebarVisible(true)}
+                            />
+
+                            )
+                            : <SocialSignIn/>
                         }
+                        <Sidebar
+                            visible={userSidebarVisible}
+                            position='right'
+                            onHide={() => setUserSidebarVisible(false)}
+                        >
+                            <div
+                                className={'h-full w-full rounded-lg p-3 flex flex-col justify-between items-center border-2 border-green-900'}>
 
-                        <div>
-                            {user ? (
-                                <div
-                                    onClick={() => setUserSidebarVisible(!userSidebarVisible)}
-                                    className={` ${userSidebarVisible ? 'fixed' : 'hidden'}  w-screen h-screen top-0 left-0  z-50 flex justify-center items-center bg-black bg-opacity-50 `}
-                                >
+                                <div className={'flex flex-col justify-start items-center'}>
+                                    <Avatar
+                                        image={user?.image}
+                                        size='xlarge'
+                                        shape='circle'
+                                    />
                                     <div
-                                        className={`relative bg-white border-2 shadow rounded w-72   ease-in-out  h-[60vh] overflow-y-auto                                    `}>
-                                        <div
-                                            className={'h-full w-full rounded-lg p-3 flex flex-col justify-between items-center ArticleCard ArticleCard '}>
-
-                                            <div className={'flex flex-col justify-start items-center  space-y-6'}>
-                                                <div
-                                                    className={'flex flex-col justify-center items-center mt-3 hover:text-blue-800 hover:underline hover:cursor-pointer'}>
-                                                    {/*email*/}
-                                                    <h4 className={' font-semibold   '}>
-                                                        {user?.name}
-                                                    </h4>
-                                                    <div className={' font-semibold text-sm opacity-50'}>
-                                                        {user?.email}
-                                                    </div>
-
-                                                </div>
-                                                <div
-                                                    className={'w-full ArticleCard-b-2 ArticleCard-gray-200 my-6'}></div>
-                                                {Links.map((link, index) => (
-                                                    <Link
-                                                        href={link.href}
-                                                        key={index}
-                                                        onClick={() => setUserSidebarVisible(false)}
-                                                        className={' font-semibold text-xl my-1 hover:scale-105 hover:'}>
-                                                        {link.name}
-                                                    </Link>
-                                                ))}
-
-                                            </div>
-
-                                            <div>
-                                                {!!user._id ? (
-                                                    <button
-                                                        type='button'
-                                                        className='ArticleCard ArticleCard px-6 py-2 font-semibold rounded lg:block bg-emerald-600 text-gray-50'
-                                                        onClick={() => logOut()}
-                                                    >
-                                                        Log Out
-                                                    </button>
-                                                ) : <div>asdfd</div>}
-                                            </div>
-
-
+                                        className={'flex flex-col justify-center items-center mt-3 hover:text-blue-800 hover:underline hover:cursor-pointer'}>
+                                        {/*email*/}
+                                        <div className={'text-gray-800 font-semibold  '}>
+                                            {user?.name}
+                                        </div>
+                                        <div className={'text-gray-800 font-semibold text-sm opacity-50'}>
+                                            {user?.email}
                                         </div>
 
                                     </div>
+                                    <div className={'w-full border-b-2 border-gray-200 my-6'}></div>
+                                    {Links.map((link, index) => (
+                                        <Link
+                                            href={link.href}
+                                            key={index}
+                                            onClick={() => setUserSidebarVisible(false)}
+                                            className={'text-gray-800 font-semibold text-xl my-1 hover:scale-105 hover:shadow'}>
+                                            {link.name}
+                                        </Link>
+                                    ))}
+
                                 </div>
-                            ) : (
-                                <SocialSignIn />
-                            )}
-                        </div>
+                                {/*devider*/}
+
+
+                                <div>
+                                    {!!user? (
+                                        <Button
+                                            type='button'
+                                            className=' px-6 py-2 font-semibold rounded lg:block bg-emerald-600 text-gray-50'
+                                            onClick={() => logOut()}
+                                        >
+                                            Log Out
+                                        </Button>
+                                    ) : <div>asdfd</div>}
+                                </div>
+
+                            </div>
+
+
+                        </Sidebar>
+
                     </div>
                 </div>
             </div>

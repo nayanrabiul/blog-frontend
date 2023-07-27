@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '@/app/(Landing&SingleArticlePages)/component/sidebar';
+import HomeSidebar from '@/app/(Landing&SingleArticlePages)/component/sidebar';
 import Header from '@/common_components/header/header';
 
 const MainSiteLayout = ({ children }) => {
@@ -9,7 +9,7 @@ const MainSiteLayout = ({ children }) => {
                 <Header />
             </div>
             <div className={'h-[89%]'}>
-                <Sidebar>{children}</Sidebar>
+                <HomeSidebar>{children}</HomeSidebar>
             </div>
 
 

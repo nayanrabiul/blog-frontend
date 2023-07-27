@@ -1,12 +1,9 @@
 'use client';
 import React from 'react';
-import { useRouter } from 'next/navigation';
-import { postData, useFetch } from '@/helpers/hooks';
-import { fetchSingleArticle, postArticle } from '@/helpers/backend_helper';
-import Editor from '@/components/editor/editor';
-import Image from 'next/image';
-import { useFormik } from 'formik';
-import Edit from '@/app/(Dashboard)/dashboard/edit-article/[_id]/edit';
+import {  useFetch } from '@/helpers/hooks';
+import { fetchSingleArticle } from '@/helpers/backend_helper';
+import Edit from '@/app/(ClietSidePages)/(Dashboard)/dashboard/edit-article/[_id]/edit';
+
 
 const MyComponent = ({ params }: { params: { _id: string } }) => {
     let _id = params._id;

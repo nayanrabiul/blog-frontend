@@ -6,7 +6,7 @@ import { useFetch } from '@/helpers/hooks';
 import { fetchTopics } from '@/helpers/backend_helper';
 
 
-export default function Sidebar({ children }) {
+export default function HomeSidebar({ children }) {
     let router = useRouter();
     let data = useFetch(fetchTopics);
     let topics = data[0] || [];
@@ -30,6 +30,7 @@ export default function Sidebar({ children }) {
                         {
                             ['Article', 'User', 'Tag', 'Topic'].map((item) => (
                                 <div
+                                    key={item}
                                     className={`px-5 py-3 w-full  cursor-pointer font-bold scale-110  flex ${
                                         //match by filter
                                         filter === item ? 'text-green-600' : ''

@@ -1,7 +1,6 @@
 'use client';
 
 import '@/styles/layout/layout.scss';
-import '@/styles/demo/Demos.scss';
 import 'primeicons/primeicons.css';
 
 import { useRouter } from 'next/navigation';

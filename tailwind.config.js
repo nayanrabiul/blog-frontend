@@ -11,6 +11,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            colors: {
+                'primary-color': '#1a202c',
+            }
         },
     },
     plugins: [
@@ -18,3 +21,5 @@ module.exports = {
         // ...
     ],
 };
+
+

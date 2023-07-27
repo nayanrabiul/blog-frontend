@@ -2,6 +2,8 @@ import ArticleCard from '@/common_components/ArticleCard/server/ArticleCard';
 
 async function getData(params) {
     let username = params.username[0];
+    let topic_id = params.username[1];
+    console.log(topic_id);
     if (username === undefined) {
         throw new Error('Failed to fetch data. User not found');
     }

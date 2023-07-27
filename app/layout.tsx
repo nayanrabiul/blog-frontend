@@ -1,14 +1,15 @@
 import { Inter } from 'next/font/google';
 import { UserContextProvider } from '@/context/user';
 
-import '@/globals.css';
+
 import 'primeicons/primeicons.css';
 import '@/styles/prism.css';//for code blocks
 
-
 import PrimeProvider from '@/context/prime_react_provider';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/themes/saga-green/theme.css';
 import 'primereact/resources/primereact.min.css';
+
+import '@/globals.css';
 
 
 const inter = Inter({ subsets: ['latin'] });

@@ -8,6 +8,9 @@
 /*background: '#E6F9EE',*/
 /*accent: '#DD6A1D',*/
 
+:root{
+    --primary-color : #14532D
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -91,3 +94,6 @@ p{
     letter-spacing: -.025em;
     margin-bottom: 1rem;
 }
+
+
+
