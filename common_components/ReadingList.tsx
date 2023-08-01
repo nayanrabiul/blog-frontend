@@ -27,6 +27,7 @@ const ReadingList = ({ post_id }) => {
             }, false);
         }
 
+
     };
     return (
         <div className={'text-center'}>

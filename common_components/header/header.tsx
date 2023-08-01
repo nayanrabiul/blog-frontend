@@ -21,6 +21,8 @@ const Header = () => {
 
     return (
         <header className='p-2 shadow h-full '>
+
+
             <div className=' container flex justify-between items-center h-full mx-auto'>
                 <div className='flex items-center gap-3'>
                     {/*header logo*/}
@@ -51,7 +53,7 @@ const Header = () => {
                                 }
                             )}>
 
-                                <span className='absolute inset-y-0 left-0 flex items-center pl-2'>
+                                   <span className='    inset-y-0 absolute left-0 flex items-center pl-2'>
                                     <button type='submit' title='Search' className='p-1 focus:outline-none focus:ring'>
                                         <svg fill='currentColor' viewBox='0 0 512 512'
                                              className='w-4 h-4 text-gray-800'>
@@ -73,16 +75,16 @@ const Header = () => {
                 <div className={'flex justify-end items-center gap-3 overflow-clip'}>
                     <div className={'flex justify-end items-center'}>
                         {user ? (
-                            <Avatar
-                                image={user?.image}
-                                size='large'
-                                shape='circle'
-                                className={'hover:cursor-pointer'}
-                                onClick={() => setUserSidebarVisible(true)}
-                            />
+                                <Avatar
+                                    image={user?.image}
+                                    size='large'
+                                    shape='circle'
+                                    className={'hover:cursor-pointer'}
+                                    onClick={() => setUserSidebarVisible(true)}
+                                />
 
                             )
-                            : <SocialSignIn/>
+                            : <SocialSignIn />
                         }
                         <Sidebar
                             visible={userSidebarVisible}
@@ -125,7 +127,7 @@ const Header = () => {
 
 
                                 <div>
-                                    {!!user? (
+                                    {!!user ? (
                                         <Button
                                             type='button'
                                             className=' px-6 py-2 font-semibold rounded lg:block bg-emerald-600 text-gray-50'

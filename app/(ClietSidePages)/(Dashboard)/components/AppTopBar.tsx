@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
+'use client';
+import { LayoutContext } from '@/app/(ClietSidePages)/(Dashboard)/context/layoutcontext';
+import { AppTopbarRef } from '@/✅✅✅ types/layout';
 import Link from 'next/link';
 import { classNames } from 'primereact/utils';
-import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
-import { AppTopbarRef } from '@/✅✅✅ types/layout';
-import { LayoutContext } from '@/app/(ClietSidePages)/(Dashboard)/context/layoutcontext';
+import { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
 
 const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
-    const { layoutConfig, layoutState, onMenuToggle, showProfileSidebar } = useContext(LayoutContext);
+    const { layoutConfig, layoutState, onMenuToggle, showProfileSidebar } =
+        useContext(LayoutContext);
     const menubuttonRef = useRef(null);
     const topbarmenuRef = useRef(null);
     const topbarmenubuttonRef = useRef(null);
@@ -15,35 +16,50 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
     useImperativeHandle(ref, () => ({
         menubutton: menubuttonRef.current,
         topbarmenu: topbarmenuRef.current,
-        topbarmenubutton: topbarmenubuttonRef.current
+        topbarmenubutton: topbarmenubuttonRef.current,
     }));
 
     return (
-        <div className="layout-topbar">
-            <Link href="/" className="layout-topbar-logo">
+        <div className='layout-topbar'>
+            <Link href='/' className='layout-topbar-logo'>
                 <span>MindWriters</span>
             </Link>
 
-            <button ref={menubuttonRef} type="button" className="p-link layout-menu-button layout-topbar-button" onClick={onMenuToggle}>
-                <i className="pi pi-bars" />
+            <button
+                ref={menubuttonRef}
+                type='button'
+                className='p-link layout-menu-button layout-topbar-button'
+                onClick={onMenuToggle}
+            >
+                <i className='pi pi-bars' />
             </button>
 
-            <button ref={topbarmenubuttonRef} type="button" className="p-link layout-topbar-menu-button layout-topbar-button" onClick={showProfileSidebar}>
-                <i className="pi pi-ellipsis-v" />
+            <button
+                ref={topbarmenubuttonRef}
+                type='button'
+                className='p-link layout-topbar-menu-button layout-topbar-button'
+                onClick={showProfileSidebar}
+            >
+                <i className='pi pi-ellipsis-v' />
             </button>
 
-            <div ref={topbarmenuRef} className={classNames('layout-topbar-menu', { 'layout-topbar-menu-mobile-active': layoutState.profileSidebarVisible })}>
-                <button type="button" className="p-link layout-topbar-button">
-                    <i className="pi pi-calendar"></i>
+            <div
+                ref={topbarmenuRef}
+                className={classNames('layout-topbar-menu', {
+                    'layout-topbar-menu-mobile-active': layoutState.profileSidebarVisible,
+                })}
+            >
+                <button type='button' className='p-link layout-topbar-button'>
+                    <i className='pi pi-calendar'></i>
                     <span>Calendar</span>
                 </button>
-                <button type="button" className="p-link layout-topbar-button">
-                    <i className="pi pi-user"></i>
+                <button type='button' className='p-link layout-topbar-button'>
+                    <i className='pi pi-user'></i>
                     <span>Profile</span>
                 </button>
-                <Link href="/documentation">
-                    <button type="button" className="p-link layout-topbar-button">
-                        <i className="pi pi-cog"></i>
+                <Link href='/documentation'>
+                    <button type='button' className='p-link layout-topbar-button'>
+                        <i className='pi pi-cog'></i>
                         <span>Settings</span>
                     </button>
                 </Link>

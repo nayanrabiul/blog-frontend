@@ -1,0 +1,14 @@
+# Ignore build output
+.next
+
+# Ignore coverage reports
+coverage
+
+# Ignore JavaScript files in the public directory
+public/**/*.js
+
+# Ignore build artifacts and cache files
+build/**
+.cache/**
+out/**
+node_modules/**
