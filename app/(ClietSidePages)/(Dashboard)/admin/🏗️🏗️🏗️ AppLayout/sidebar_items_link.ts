@@ -1,6 +1,6 @@
 import { AppMenuItem } from '@/✅✅✅ types/layout';
 
-const  menu_link: AppMenuItem[] = [
+const menu_link: AppMenuItem[] = [
     {
         label: 'Home',
         items: [{ label: 'Main Site', icon: 'pi pi-fw pi-home', to: '/' }],
