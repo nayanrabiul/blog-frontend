@@ -3,6 +3,7 @@ import { CrownFilled, SmileFilled, UserOutlined } from '@ant-design/icons';
 
 import type { ProSettings } from '@ant-design/pro-components';
 import { ProLayout, SettingDrawer } from '@ant-design/pro-components';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import './admin.css';
@@ -25,6 +26,12 @@ export default ({ children }) => {
             }}
         >
             <ProLayout
+                logo='https://avatars.githubusercontent.com/u/8186664?s=200&v=4'
+                title={
+                    <>
+                        <Link href='/'>Times2Read</Link>
+                    </>
+                }
                 route={{
                     path: '/',
                     routes: [

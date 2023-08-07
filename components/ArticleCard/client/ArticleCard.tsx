@@ -48,7 +48,7 @@ export default function ArticleCard({ article }) {
                         </div>
                     </div>
                     <button title='Open options' type='button'>
-                        <svg
+                        {/* <svg
                             xmlns='http://www.w3.org/2000/svg'
                             viewBox='0 0 512 512'
                             className='h-5 w-5 fill-current'
@@ -56,7 +56,10 @@ export default function ArticleCard({ article }) {
                             <path d='M256,144a64,64,0,1,0-64-64A64.072,64.072,0,0,0,256,144Zm0-96a32,32,0,1,1-32,32A32.036,32.036,0,0,1,256,48Z'></path>
                             <path d='M256,368a64,64,0,1,0,64,64A64.072,64.072,0,0,0,256,368Zm0,96a32,32,0,1,1,32-32A32.036,32.036,0,0,1,256,464Z'></path>
                             <path d='M256,192a64,64,0,1,0,64,64A64.072,64.072,0,0,0,256,192Zm0,96a32,32,0,1,1,32-32A32.036,32.036,0,0,1,256,288Z'></path>
-                        </svg>
+                        </svg> */}
+                        <div className={' right-6 top-3'}>
+                            <ReadingList post_id={article._id} />
+                        </div>
                     </button>
                 </div>
                 <div className={'relative'}>
@@ -67,10 +70,6 @@ export default function ArticleCard({ article }) {
                     >
                         <h1 className={'px-2'}>{article.title}</h1>
                     </Link>
-
-                    <div className={'absolute right-6 top-3'}>
-                        <ReadingList post_id={article._id} />
-                    </div>
                 </div>
 
                 <div className='mt-6    flex flex-col items-start justify-start pl-2 '>
