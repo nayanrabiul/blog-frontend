@@ -27,6 +27,7 @@ export default function Dashboard({ children }) {
         >
             <ProLayout
                 logo='https://avatars.githubusercontent.com/u/8186664?s=200&v=4'
+                //@ts-ignore
                 title={
                     <>
                         <Link href='/'>Times2Read</Link>
