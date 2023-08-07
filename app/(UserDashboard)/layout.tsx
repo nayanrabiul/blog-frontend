@@ -40,16 +40,16 @@ export default ({ children }) => {
                         },
                         {
                             name: 'Article',
-                            path: '/dashobard/article',
+                            path: '/dashboard/article',
                             icon: <CrownFilled />,
                             routes: [
                                 {
-                                    path: '/dashobard/edit-article',
+                                    path: '/dashboard/edit-article',
                                     name: 'Edit Article',
                                     icon: <SmileFilled />,
                                 },
                                 {
-                                    path: '/dashobard/my_articles',
+                                    path: '/dashboard/my_articles',
                                     name: 'My Articles',
                                     icon: <SmileFilled />,
                                 },

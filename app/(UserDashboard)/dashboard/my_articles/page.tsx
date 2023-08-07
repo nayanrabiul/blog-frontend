@@ -1,12 +1,19 @@
 'use client';
+import { useUserContext } from '@/context/user';
 import { fetchArticleByUser } from '@/helpers/backend_helper';
 import { useFetch } from '@/helpers/hooks';
 import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
+import { useEffect } from 'react';
 
 const MyComponent = () => {
-    let [articles, setArticles, { loading }] = useFetch(fetchArticleByUser);
-    console.log(articles);
+    const { user, logOut } = useUserContext();
+    let [articles, getArticles, { loading }] = useFetch(fetchArticleByUser, {}, false);
+    useEffect(() => {
+        getArticles({ username: user?.username });
+        console.log('🚀 ~ file: page.tsx:14 ~ useEffect ~ user.username:', user?.username);
+    }, [user]);
+
     let data = articles?.docs || [];
     const imageBodyTemplate = (data) => {
         return <img src={data.image} alt={data.title} className='w-6rem -2 -round h-32 w-48' />;

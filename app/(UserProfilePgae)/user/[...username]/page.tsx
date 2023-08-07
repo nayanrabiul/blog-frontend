@@ -1,4 +1,4 @@
-import ArticleCard from '@/common_components/ArticleCard/server/ArticleCard';
+import ArticleCard from '@/components/ArticleCard/server/ArticleCard';
 
 async function getData(params) {
     let username = params.username[0];
@@ -23,7 +23,6 @@ async function getData(params) {
 }
 
 export default async function Home({ params, searchParams }) {
-
     let topic_id = searchParams.topic;
     let data = await getData(params);
     let articles = data.data.docs || [];
@@ -36,21 +35,18 @@ export default async function Home({ params, searchParams }) {
                     {/*posts that will be displayed on the homepage*/}
                     {/*<div className='grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>*/}
                     <div className='sm:pr-3'>
-                        {
-                            articles.length === 0 ? (
-                                    <div className='text-center w-max text-2xl font-bold '>
-                                        No articles found
-                                    </div>
-                                )
-                                :
-                                articles.map((article) => (
-                                    <ArticleCard key={article._id} article={article} />
-                                ))
-                        }
+                        {articles.length === 0 ? (
+                            <div className='w-max text-center text-2xl font-bold '>
+                                No articles found
+                            </div>
+                        ) : (
+                            articles.map((article) => (
+                                <ArticleCard key={article._id} article={article} />
+                            ))
+                        )}
                     </div>
                 </div>
             </section>
         </div>
     );
-};
-
+}
