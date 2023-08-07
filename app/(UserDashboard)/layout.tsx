@@ -49,7 +49,7 @@ export default ({ children }) => {
                                     icon: <SmileFilled />,
                                 },
                                 {
-                                    path: '/dashobard/my-articles',
+                                    path: '/dashobard/my_articles',
                                     name: 'My Articles',
                                     icon: <SmileFilled />,
                                 },
@@ -57,7 +57,7 @@ export default ({ children }) => {
                         },
                         {
                             name: 'Readiing List',
-                            path: '/dashobard/rerading_list',
+                            path: '/dashobard/reading_list',
                             icon: <CrownFilled />,
                         },
                     ],
