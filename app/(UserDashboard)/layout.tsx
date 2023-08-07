@@ -49,7 +49,7 @@ export default ({ children }) => {
                                     icon: <SmileFilled />,
                                 },
                                 {
-                                    path: '/dashobard/my-article',
+                                    path: '/dashobard/my-articles',
                                     name: 'My Articles',
                                     icon: <SmileFilled />,
                                 },
