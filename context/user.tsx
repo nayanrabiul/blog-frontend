@@ -22,7 +22,7 @@ export const UserContextProvider = ({ children }: { children: React.ReactNode })
 
     // Fetch the current logged-in user by token
     // Logout function by removing the token from local storage
-    const logOut = () => {
+     const logOut = () => {
         localStorage.removeItem('authToken');
         setLoggedInUser(null);
     };

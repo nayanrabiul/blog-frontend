@@ -1,18 +1,15 @@
-import React from 'react';
-import HomeSidebar from '@/app/(Landing&SingleArticlePages)/component/sidebar';
-import Header from '@/common_components/header/header';
+import HomeSidebar from '@/components/Landing&SingleArticlePages/sidebar';
+import Header from '@/components/header/header';
 
 const MainSiteLayout = ({ children }) => {
     return (
-        <div className={'flex flex-col w-full h-[100vh]  relative'}>
+        <div className={'relative flex h-[100vh] w-full  flex-col'}>
             <div className={'h-[11%]'}>
                 <Header />
             </div>
             <div className={'h-[89%]'}>
                 <HomeSidebar>{children}</HomeSidebar>
             </div>
-
-
         </div>
     );
 };

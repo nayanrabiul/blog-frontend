@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import swalAlert from '@/components/alert';
 import axios from 'axios';
-import swalAlert from '@/common_components/alert';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 type QueryParams = {
     [key: string]: any;
