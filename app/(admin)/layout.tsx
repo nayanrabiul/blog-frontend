@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import './admin.css';
 
-export default ({ children }) => {
+export default function Layout({ children }) {
     const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
         fixSiderbar: true,
         layout: 'mix',
@@ -97,4 +97,4 @@ export default ({ children }) => {
             />
         </div>
     );
-};
+}
