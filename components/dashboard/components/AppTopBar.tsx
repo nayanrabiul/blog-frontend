@@ -23,7 +23,7 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
     return (
         <div className='layout-topbar'>
             <Link href='/' className='layout-topbar-logo'>
-                <span>"Times2Read"</span>
+                <span>Times2Read</span>
             </Link>
 
             <button

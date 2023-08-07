@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useFetch } from '@/helpers/hooks';
 import { searchArticle } from '@/helpers/backend_helper';
-import ArticleCard from '@/common_components/ArticleCard/client/ArticleCard';
+import ArticleCard from '@/components/ArticleCard/client/ArticleCard';
 
 export default function Search() {
     let searchParams = useSearchParams();

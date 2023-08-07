@@ -30,7 +30,7 @@ const Header = () => {
                         className='flex items-center p-2'
                     >
                         <span className='text-xl font-bold uppercase  tracking-wide'>
-                            "Times2Read"
+                            Times2Read
                         </span>
                     </Link>
                     {/*header search box*/}

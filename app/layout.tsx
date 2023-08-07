@@ -11,7 +11,7 @@ import '@/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-    title: '"Times2Read"',
+    title: 'Times2Read',
     description:
         'Knowledges are the most important thing in the world. We are here to help you to write your mind.',
 };
