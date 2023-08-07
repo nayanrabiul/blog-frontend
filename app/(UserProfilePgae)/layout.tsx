@@ -1,6 +1,7 @@
+import UserSidebar from '@/components/UserProfilePgae/sidebar';
+import Header from '@/components/header/header';
 import React from 'react';
-import UserSidebar from '@/app/(UserProfilePgae)/component/sidebar';
-import Header from '@/common_components/header/header';
+
 
 const MainSiteLayout = ({ children }) => {
     return (

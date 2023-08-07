@@ -1,4 +1,4 @@
-import ArticleCard from '@/common_components/ArticleCard/server/ArticleCard';
+import ArticleCard from '@/components/ArticleCard/client/ArticleCard';
 
 async function getData(topic_id) {
     let api = '';
@@ -32,21 +32,18 @@ export default async function Home({ searchParams }) {
                     {/*posts that will be displayed on the homepage*/}
                     {/*<div className='grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>*/}
                     <div className='sm:pr-3'>
-                        {
-                            articles.length === 0 ? (
-                                <div className='text-center w-max text-2xl font-bold '>
-                                    No articles found
-                                </div>
-                            )
-                        :
+                        {articles.length === 0 ? (
+                            <div className='w-max text-center text-2xl font-bold '>
+                                No articles found
+                            </div>
+                        ) : (
                             articles.map((article) => (
                                 <ArticleCard key={article._id} article={article} />
                             ))
-                        }
+                        )}
                     </div>
                 </div>
             </section>
         </div>
     );
-};
-
+}
